@@ -1,5 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import giveClassesImage from '../../assets/images/icons/give-classes.png';
+import heartImage from '../../assets/images/icons/heart.png';
 import studyImage from '../../assets/images/icons/study.png';
 import landingImage from '../../assets/images/landing.png';
 import styles from './styles';
@@ -27,6 +28,13 @@ const Landing = () => {
           <Text style={styles.buttonText}>Dar aulas</Text>
         </TouchableOpacity>
       </View>
+
+      <Text style={styles.totalConnections}>
+        Total de 258 conexões {'\n'}
+        <Text>
+          já realizadas <Image source={heartImage} />
+        </Text>
+      </Text>
     </View>
   );
 };
