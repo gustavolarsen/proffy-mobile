@@ -1,7 +1,8 @@
 import { Text, View } from 'react-native';
+import styles from './styles';
 const TeacherList = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>TeacherList</Text>
     </View>
   );
