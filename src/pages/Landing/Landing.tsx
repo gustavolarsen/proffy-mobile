@@ -30,10 +30,7 @@ const Landing = () => {
       </View>
 
       <Text style={styles.totalConnections}>
-        Total de 258 conexões {'\n'}
-        <Text>
-          já realizadas <Image source={heartImage} />
-        </Text>
+        {`Total de 258 conexões já realizadas `} <Image source={heartImage} />
       </Text>
     </View>
   );
