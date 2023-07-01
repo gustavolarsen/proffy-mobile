@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import giveClassesImage from '../../assets/images/icons/give-classes.png';
 import heartImage from '../../assets/images/icons/heart.png';
 import studyImage from '../../assets/images/icons/study.png';
@@ -24,21 +25,21 @@ const Landing = () => {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity
+        <RectButton
           style={[styles.button, styles.buttonPrimary]}
           onPress={() => handleNavigateTo('Study')}
         >
           <Image source={studyImage} />
           <Text style={styles.buttonText}>Estudar</Text>
-        </TouchableOpacity>
+        </RectButton>
 
-        <TouchableOpacity
+        <RectButton
           style={[styles.button, styles.buttonSecondary]}
           onPress={() => handleNavigateTo('GiveClasses')}
         >
           <Image source={giveClassesImage} />
           <Text style={styles.buttonText}>Dar aulas</Text>
-        </TouchableOpacity>
+        </RectButton>
       </View>
 
       <Text style={styles.totalConnections}>
