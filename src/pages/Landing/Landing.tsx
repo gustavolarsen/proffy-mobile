@@ -24,7 +24,10 @@ const Landing = () => {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
+        <TouchableOpacity
+          style={[styles.button, styles.buttonPrimary]}
+          onPress={() => handleNavigateTo('Study')}
+        >
           <Image source={studyImage} />
           <Text style={styles.buttonText}>Estudar</Text>
         </TouchableOpacity>
