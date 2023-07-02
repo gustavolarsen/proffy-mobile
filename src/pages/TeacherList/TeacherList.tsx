@@ -1,8 +1,10 @@
 import { Feather } from '@expo/vector-icons';
 import { View } from 'react-native';
-import { BorderlessButton } from 'react-native-gesture-handler';
+import { BorderlessButton, ScrollView } from 'react-native-gesture-handler';
 
 import PageHeader from '../../components/PageHeader/PageHeader';
+import TeacherItem from '../../components/TeacherItem/TeacherItem';
+
 import styles from './styles';
 
 const TeacherList = () => {
@@ -20,6 +22,9 @@ const TeacherList = () => {
           </BorderlessButton>
         }
       />
+      <ScrollView style={styles.teacherList}>
+        <TeacherItem />
+      </ScrollView>
     </View>
   );
 };
