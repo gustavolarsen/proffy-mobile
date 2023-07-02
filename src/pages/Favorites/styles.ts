@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
 
   teacherList: {
     marginTop: -40,
+    paddingHorizontal: 16,
+    marginBottom: 16,
   },
 });
 

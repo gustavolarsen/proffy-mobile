@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
 
   teacherList: {
     marginTop: -40,
+    paddingHorizontal: 16,
+    paddingBottom: 20,
   },
 
   searchForm: {
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 16,
     marginTop: 4,
-    marginBottom: 16,
+    marginBottom: 8,
   },
 
   submitButton: {
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 16,
   },
 
   submitButtonText: {
