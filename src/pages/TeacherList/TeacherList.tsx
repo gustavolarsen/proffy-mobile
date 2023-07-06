@@ -6,9 +6,12 @@ import {
   ScrollView,
 } from 'react-native-gesture-handler';
 
-import PageHeader from '../../components/PageHeader/PageHeader';
-import TeacherItem from '../../components/TeacherItem/TeacherItem';
+import { teachersArr } from '../../api/teachers';
 
+import PageHeader from '../../components/PageHeader/PageHeader';
+
+import { useState } from 'react';
+import TeacherItem from '../../components/TeacherItem/TeacherItem';
 import styles from './styles';
 
 const FilterForm = () => {
@@ -57,14 +60,24 @@ const FilterForm = () => {
   );
 };
 
-const handleFiltersSubmit = () => {};
+const handleFiltersSubmit = () => {
+  alert('aqui');
+};
+
 const TeacherList = () => {
+  const [teachers, setTeachers] = useState(teachersArr);
+  const [filterVisible, setFilterVisible] = useState(false);
+
+  const toggleFilterVisible = () => {
+    setFilterVisible(!filterVisible);
+  };
+
   return (
     <View style={styles.container}>
       <PageHeader
         title="Proffys disponíveis"
         headerRight={
-          <BorderlessButton>
+          <BorderlessButton onPress={toggleFilterVisible}>
             <Feather
               name="filter"
               size={20}
@@ -73,13 +86,23 @@ const TeacherList = () => {
           </BorderlessButton>
         }
       >
-        <FilterForm />
+        {filterVisible && <FilterForm />}
       </PageHeader>
+
       <ScrollView style={styles.teacherList}>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map(teacher => {
+          return (
+            <TeacherItem
+              key={teacher.id}
+              nome={teacher.nome}
+              avatar={teacher.avatar}
+              bio={teacher.bio}
+              materia={teacher.materia}
+              valor={teacher.valor}
+              whatasspp={teacher.whastapp}
+            />
+          );
+        })}
       </ScrollView>
     </View>
   );
